@@ -15,8 +15,5 @@ build:
 launch:
   stage: launch
   script:
-    - docker run -it -v ~:/output zoo.smok.co/hackaton/genetix
+    - docker run -t -v ~:/output zoo.smok.co/hackaton/genetix
   when: manual
-  artifacts:
-    paths:
-      - Data.html
