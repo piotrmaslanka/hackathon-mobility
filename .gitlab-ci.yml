@@ -1,0 +1,22 @@
+stages:
+  - build
+  - launch
+
+before_script:
+  - docker login -u gitlab-ci-token -p "$CI_BUILD_TOKEN" zoo.smok.co
+
+
+build:
+  stage: build
+  script:
+    - docker build -t zoo.smok.co/hackaton/genetix .
+    - docker push zoo.smok.co/hackaton/genetix
+
+launch:
+  stage: launch
+  script:
+    - docker run -it zoo.smok.co/hackaton/genetix
+  when: manual
+  artifacts:
+    paths:
+      - Data.html
