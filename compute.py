@@ -419,7 +419,7 @@ print('Surface area : ', pop[0].count_surface())
 
 stdOffset = MINIMUM_POINT
 
-outfile = open("dataPts.csv", "w")
+outfile = open("/output/dataPts.csv", "w")
 
 for i in range(len(pop[0].grid[0])):
     try:

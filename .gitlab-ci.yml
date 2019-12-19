@@ -15,7 +15,7 @@ build:
 launch:
   stage: launch
   script:
-    - docker run -it zoo.smok.co/hackaton/genetix
+    - docker run -it -v ~:/output zoo.smok.co/hackaton/genetix
   when: manual
   artifacts:
     paths:

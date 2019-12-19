@@ -7,3 +7,5 @@ WORKDIR /app
 ADD . /app
 
 CMD bash run.sh
+
+VOLUME /output

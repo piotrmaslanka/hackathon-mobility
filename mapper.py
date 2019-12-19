@@ -1,5 +1,5 @@
-points = open('dataPts.csv', 'r')
-lista = open('Data.html','w')
+points = open('/output/dataPts.csv', 'r')
+lista = open('/output/Data.html','w')
 
 print('''﻿<!DOCTYPE html>
 <html>
