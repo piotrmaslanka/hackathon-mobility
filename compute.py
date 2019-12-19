@@ -148,7 +148,7 @@ def get_giveups(scooter_type: str, particular_month: tp.Optional[int] = None) ->
         lon, lat = float(lon), float(lat)
         return Giveup(int(mon), Point(lon=lon, lat=lat))
 
-    with open(f'../input/blinkeehackathon/Locations{scooter_type}sOnRzeszow07-09.csv', 'r') as fin:
+    with open(f'Locations{scooter_type}sOnRzeszow07-09.csv', 'r') as fin:
         for line in fin.readlines()[1:]:
             a = parseLine(line)
             if particular_month is not None:
@@ -203,7 +203,7 @@ def as_points(lst: tp.List[float]) -> tp.Iterator[Point]:
 
 
 def get_zones() -> tp.Iterator[Zone]:
-    with open('../input/blinkeehackathon/strefy.json', 'r') as fin:
+    with open('strefy.json', 'r') as fin:
         data = json.load(fin)
 
     for zone in data['data']['layers']['data']:
@@ -224,7 +224,7 @@ def get_heatmap() -> tp.Iterator[Giveup]:
         lon, lat = float(lon), float(lat)
         return Giveup(int(wth), Point(lon=lon, lat=lat))
 
-    with open(f'../input/blinkeehackathon/Heat.csv', 'r') as fin:
+    with open(f'Heat.csv', 'r') as fin:
         for line in fin.readlines()[1:]:
             yield parseLine(line)
 
